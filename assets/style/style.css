@@ -11,6 +11,8 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: #f5f5f5;
+  width: 100%;
+  padding: 10px 20px;
 }
 
 .header .logo {
@@ -18,7 +20,7 @@ body {
   font-family: Sriracha, cursive;
   color: #000;
   text-decoration: none;
-  margin-left: 30px;
+  margin-left: 20px;
 }
 
 .nav-items {
@@ -32,7 +34,7 @@ body {
 .nav-items a {
   text-decoration: none;
   color: #000;
-  padding: 35px 20px;
+  padding: 15px 10px;
 }
 
 /* CSS for main section */
@@ -43,10 +45,17 @@ body {
   align-items: center;
   width: 100%;
   height: 520px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 50%) 0%, rgba(0, 0, 0, 50%) 100%), url("../image/pexels-markusspiske-177598.jpg");
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 50%) 0%,
+      rgba(0, 0, 0, 50%) 100%
+    ),
+    url("../image/pexels-markusspiske-177598.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  text-align: center;
+  padding: 0 20px;
 }
 
 .intro h1 {
@@ -74,14 +83,16 @@ body {
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 0 20px rgba(255 255 255 / 40%)
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
 }
 
+/* CSS for achievements section */
 .achievements {
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding: 40px 80px;
+  flex-wrap: wrap;
 }
 
 .achievements .work {
@@ -89,11 +100,13 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 40px;
+  padding: 20px;
+  flex-basis: 100%;
+  max-width: 250px;
+  text-align: center;
 }
 
 .achievements .work i {
-  width: fit-content;
   font-size: 50px;
   color: #333;
   border-radius: 50%;
@@ -114,19 +127,23 @@ body {
   margin: 10px 0;
 }
 
+/* CSS for about-me section */
 .about-me {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 40px 80px;
+  padding: 40px 20px;
   border-top: 2px solid #eee;
+  text-align: center;
 }
 
 .about-me img {
-  width: 500px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 500px;
   height: auto;
   border-radius: 10px;
+  margin-bottom: 20px;
 }
 
 .about-me-text h2 {
@@ -148,18 +165,22 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: #302f49;
-  padding: 40px 80px;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+  text-align: center;
 }
 
 .footer .copy {
   color: #fff;
+  margin-bottom: 20px;
 }
 
 .bottom-links {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 40px 0;
+  padding: 20px 0;
+  flex-wrap: wrap;
 }
 
 .bottom-links .links {
@@ -167,7 +188,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 40px;
+  padding: 20px;
 }
 
 .bottom-links .links span {
@@ -181,4 +202,83 @@ body {
   text-decoration: none;
   color: #a1a1a1;
   padding: 10px 20px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+  }
+
+  .header .logo {
+    margin: 10px 0;
+  }
+
+  .nav-items {
+    flex-direction: column;
+    margin-right: 0;
+  }
+
+  .nav-items a {
+    padding: 10px 0;
+  }
+
+  .intro h1 {
+    font-size: 40px;
+  }
+
+  .intro p {
+    font-size: 18px;
+  }
+
+  .intro button {
+    font-size: 18px;
+  }
+
+  .achievements {
+    padding: 20px;
+  }
+
+  .about-me {
+    padding: 20px;
+  }
+
+  .footer {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .bottom-links {
+    flex-direction: column;
+  }
+
+  .bottom-links .links {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro h1 {
+    font-size: 30px;
+  }
+
+  .intro p {
+    font-size: 16px;
+  }
+
+  .intro button {
+    font-size: 16px;
+  }
+
+  .achievements .work {
+    max-width: 100%;
+  }
+
+  .about-me-text h2 {
+    font-size: 24px;
+  }
+
+  .footer {
+    padding: 20px;
+  }
 }
